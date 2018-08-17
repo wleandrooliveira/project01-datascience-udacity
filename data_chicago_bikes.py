@@ -52,6 +52,8 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
+def column_to_list(data, index):
+    
 """
     Argumentos:
       param1: lista.
@@ -59,8 +61,6 @@ input("Aperte Enter para continuar...")
       Retorna:
        lista de colunas.
 """
-
-def column_to_list(data, index):
     column_list = []
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
     for linhas in data:
@@ -106,7 +106,18 @@ assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
 
 input("Aperte Enter para continuar...")
 
+# Por que nós não criamos uma função parTODO isso?
+# TAREFA 5
+# TODO: Crie uma função para contar os gêneros. Retorne uma lista.
+# Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 def count_gender(data_list):
+"""
+    Argumentos:
+      param1: recebe o dataset data_list.
+      param2 e 3: inicia duas váriaveis male e female com valor 0
+      Retorna:
+       contagem de genero male e female
+"""
     male = 0
     female = 0
     
@@ -118,16 +129,6 @@ def count_gender(data_list):
         
     return [male, female]
 
-# Por que nós não criamos uma função parTODO isso?
-# TAREFA 5
-# TODO: Crie uma função para contar os gêneros. Retorne uma lista.
-# Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
-"""
-    Argumentos:
-      param1: lista.
-      Retorna:
-       contagem de genero.
-"""
 print("\nTAREFA 5: Imprimindo o resultado de count_gender")
 print(count_gender(data_list))
 
@@ -145,14 +146,14 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
+def most_popular_gender(data_list):
+    
 """
     Argumentos:
       param1: lista .
       Retorna:
        Resposta genero mais popular.
 """
-
-def most_popular_gender(data_list):
     answer = ""
 
     count_genero = count_gender(data_list)
@@ -163,7 +164,6 @@ def most_popular_gender(data_list):
         answer = "Feminino"
     else:
         answer = "Os generos são iguais"
-    
     
     return answer
 
@@ -193,15 +193,17 @@ input("Aperte Enter para continuar...")
 # TAREFA 7
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 
-"""
-    Argumentos:
-      param1: lista.
-      Retorna:
-       customer, subscriber, dependent.
-"""
 print("\nTAREFA 7: Verifique o gráfico!")
 
 def count_typer_users(data_list):
+    
+"""
+    Argumentos:
+      param1: recebe o dataset data_list.
+      param2, 3 e 4: inicializa as variaveis customer, subscriber, dependent com valor 0.
+      Retorna:
+       A contagem dos tipos de usuários customer, subscriber, dependent.
+"""
     customer = 0
     subscriber = 0
     dependent = 0
